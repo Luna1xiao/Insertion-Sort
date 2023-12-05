@@ -1,5 +1,6 @@
 name: Insertion Sort CI
 
+#定义触发条件：在推送到主分支以及拉取请求目标为主分支时运行
 on:
   push:
     branches:
@@ -12,6 +13,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    #从仓库检出代码
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
@@ -19,7 +21,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.x
+        python-version: 3.x #设置python环境
 
     - name: Run Python Tests
       run: python src/Insertion_Sort.py  # 添加测试对象
