@@ -1,5 +1,8 @@
 import unittest
-from ..src.Insertion_Sort import insertion_sort
+import os
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from src.Insertion_Sort import insertion_sort
 
 class TestInsertionSort(unittest.TestCase):
     def test_empty_list(self):
