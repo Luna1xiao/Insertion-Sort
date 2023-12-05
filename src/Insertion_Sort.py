@@ -1,5 +1,7 @@
 def insertion_sort(arr):
+    #定义函数
     for i in range(1, len(arr)):
+        #循环数组
         v = arr[i]
         j = i - 1
         while j >= 0 and arr[j] > v:
