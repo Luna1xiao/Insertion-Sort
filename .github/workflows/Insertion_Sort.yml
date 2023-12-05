@@ -1,1 +1,35 @@
+name: Insertion Sort CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Run Python Tests
+      run: python src/Insertion_Sort.py  # Adjust the command as needed
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14
+
+    - name: Install JavaScript dependencies
+      run: |
+        cd test
+        npm install
+
+    - name: Run JavaScript Tests
+      run: |
+        cd test
+        npm test  # Assuming your test script is configured in package.json under "scripts"
 
