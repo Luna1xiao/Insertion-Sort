@@ -1,6 +1,12 @@
 name: Insertion Sort CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   test:
@@ -16,20 +22,7 @@ jobs:
         python-version: 3.x
 
     - name: Run Python Tests
-      run: python src/Insertion_Sort.py  # Adjust the command as needed
+      run: python src/Insertion_Sort.py  # 调整命令以运行你的 Python 测试
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 14
-
-    - name: Install JavaScript dependencies
-      run: |
-        cd test
-        npm install
-
-    - name: Run JavaScript Tests
-      run: |
-        cd test
-        npm test  # Assuming your test script is configured in package.json under "scripts"
-
+    - name: Run Python Test Suite
+      run: python test/test.py  # 调整命令以运行你的 Python 测试脚本
