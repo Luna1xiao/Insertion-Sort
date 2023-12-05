@@ -22,7 +22,7 @@ jobs:
         python-version: 3.x
 
     - name: Run Python Tests
-      run: python src/Insertion_Sort.py  # 调整命令以运行你的 Python 测试
+      run: python src/Insertion_Sort.py  # 添加测试对象
 
     - name: Run Python Test Suite
-      run: python test/test.py  # 调整命令以运行你的 Python 测试脚本
+      run: python test/test.py  # 添加测试代码
