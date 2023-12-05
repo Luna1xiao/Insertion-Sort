@@ -17,17 +17,17 @@ class TestInsertionSort(unittest.TestCase):
         arr = [1]
         insertion_sort(arr)
         self.assertEqual(arr, [1])
-
+    #测试算法是否保持已排序列表的顺序
     def test_sorted_list(self):
         arr = [1, 2, 3, 4, 5]
         insertion_sort(arr)
         self.assertEqual(arr, [1, 2, 3, 4, 5])
-
+    #测试算法是否正确对逆序列表进行排序
     def test_reverse_sorted_list(self):
         arr = [5, 4, 3, 2, 1]
         insertion_sort(arr)
         self.assertEqual(arr, [1, 2, 3, 4, 5])
-
+    #测试算法是否能正确排序随机顺序的列表
     def test_random_list(self):
         arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
         insertion_sort(arr)
