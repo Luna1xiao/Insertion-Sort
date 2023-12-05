@@ -1,0 +1,28 @@
+name: Insertion Sort CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Run Python Tests
+      run: python src/Insertion_Sort.py  # 调整命令以运行你的 Python 测试
+
+    - name: Run Python Test Suite
+      run: python test/test.py  # 调整命令以运行你的 Python 测试脚本
