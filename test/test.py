@@ -3,13 +3,16 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from src.Insertion_Sort import insertion_sort
+#导入路径和包
 
+#测试
 class TestInsertionSort(unittest.TestCase):
+    #测试空数组
     def test_empty_list(self):
         arr = []
         insertion_sort(arr)
         self.assertEqual(arr, [])
-
+    #测试单个数组
     def test_single_element_list(self):
         arr = [1]
         insertion_sort(arr)
